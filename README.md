@@ -17,7 +17,31 @@ Mink is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Mink'
+pod 'Mink', :git => 'https://github.com/cHaLkdusT/Mink'
+```
+
+## Usage
+### Swift
+```swift
+let key = MinkKey(publicKey: "publicKey", privateKey: "privateKey")
+let crypto = try? MinkCrypto(key: key)
+
+let encryptedText = try? crypto?.encryptText("plain text")
+
+let decryptedText = try? crypto?.decryptText("encrypted text")
+```
+### Objective-C
+```objective-c
+NSString *publicKey = @"publicKey";
+NSString *privateKey = @"privateKey";
+MinkKey *key = [[MinkKey alloc] initWithPublicKey:publicKey privateKey:privateKey];
+NSError *error;
+MinkCrypto *crypto = [[MinkCrypto alloc] initWithKey:key error:&error];
+
+NSString *encryptedText = [crypto encryptText:@"plain text" error:&error];
+
+NSString *decryptedText = [crypto decryptText:@"encrypted text"
+                                        error:&error];
 ```
 
 ## Author
