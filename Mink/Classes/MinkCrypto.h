@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) MinkKey * _Nullable key;
 
-- (nonnull instancetype)initWithKey:(MinkKey * _Nullable)key
+- (nullable instancetype)initWithKey:(MinkKey * _Nullable)key
                               error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 /**

@@ -12,7 +12,7 @@
 
 @implementation MinkCrypto
 
-- (nonnull instancetype)initWithKey:(MinkKey * _Nullable)key
+- (nullable instancetype)initWithKey:(MinkKey * _Nullable)key
                               error:(NSError * _Nullable __autoreleasing * _Nullable)outError {
   self = [super init];
   if (self) {
@@ -37,7 +37,8 @@
 
 - (nullable NSString *)encryptText:(NSString * _Nonnull)plainText
                              error:(NSError * _Nullable __autoreleasing *)outError {
-  return [self encryptText:plainText usingKey:_key.publicKey error:outError];
+  NSString *publicKey = _key.publicKey ? _key.publicKey : @"";
+  return [self encryptText:plainText usingKey:publicKey error:outError];
 }
 
 - (nullable NSString *)encryptText:(NSString * _Nonnull)plainText
@@ -93,7 +94,8 @@
 
 - (nullable NSString *)decryptText:(NSString * _Nonnull)cipherText
                              error:(NSError * _Nullable __autoreleasing *)outError {
-  return [self decryptText:cipherText usingKey:_key.privateKey error:outError];
+  NSString *privateKey = _key.privateKey ? _key.privateKey : @"";
+  return [self decryptText:cipherText usingKey:privateKey error:outError];
 }
 
 - (nullable NSString *)decryptText:(NSString * _Nonnull)cipherText
