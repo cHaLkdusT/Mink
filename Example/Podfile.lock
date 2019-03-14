@@ -1,0 +1,35 @@
+PODS:
+  - Expecta (1.0.6)
+  - Mink (0.1.0):
+    - Tink
+  - rapidjson (1.1.0)
+  - Specta (1.0.7)
+  - Tink (1.2.2):
+    - rapidjson (~> 1.1.0)
+
+DEPENDENCIES:
+  - Expecta
+  - Mink (from `../`)
+  - Specta
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Expecta
+    - rapidjson
+    - Specta
+    - Tink
+
+EXTERNAL SOURCES:
+  Mink:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  Mink: df06fd5448a8b016e09aed233ad284cc8e05d32f
+  rapidjson: 926ddeea70d7a0987b6d746cd9fa51f165467cd3
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  Tink: 6e98a53fca9104a396fecd043130eb37324f18c6
+
+PODFILE CHECKSUM: e45791b54dec7fbf58cdfe9299ad87b745916a82
+
+COCOAPODS: 1.6.1
